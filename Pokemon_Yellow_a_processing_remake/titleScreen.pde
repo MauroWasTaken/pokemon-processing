@@ -12,15 +12,16 @@ void titleScreen(){
     if(tframes>30){
         tScreen=!tScreen;
         tframes=0;
+        float imgWidth=height*16/9;
+        if(tScreen){
+            image(tS0, width/2-imgWidth/2, 0,imgWidth , height);
+        }else{
+            image(tS1, width/2-imgWidth/2, 0,imgWidth , height);
+        }
     }else{
         tframes++;
     }
-    float imgWidth=height*16/9;
-    if(tScreen){
-        image(tS0, width/2-imgWidth/2, 0,imgWidth , height);
-    }else{
-        image(tS1, width/2-imgWidth/2, 0,imgWidth , height);
-    }
+    
     if((start)&(start!=pstart)){
         screen=1;
         tSTheme.stop();

@@ -2,8 +2,31 @@ PImage MM0;
 PImage selector;
 int selecting=0;
 SoundFile MMMove;
+boolean first=true;
 void mainMenu(){
-    noStroke();
+   if(first)drawMM(); //<>//
+    if((up)&(up!=pup)){
+      if(selecting!=0){
+          selecting--;
+          MMMove.play();
+          drawMM();
+      }
+    }
+    if((down)&(down!=pdown)){
+        if(selecting!=1){
+          selecting++;
+          MMMove.play();
+          drawMM();
+        }
+    }
+    if((a)&(a!=pa)){
+          screen=0;
+          MMMove.play();       
+    }
+    first=false;
+}
+void drawMM(){
+   noStroke();
     smooth(3);
     background(255,255,255);
     float imgWidth=height*16/9;
@@ -17,21 +40,5 @@ void mainMenu(){
       break;
 default:
   break;
-    } //<>//
-    if((up)&(up!=pup)){
-      if(selecting!=0){
-          selecting--;
-          MMMove.play();
-      }
-    }
-    if((down)&(down!=pdown)){
-        if(selecting!=1){
-          selecting++;
-          MMMove.play();
-        }
-    }
-    if((a)&(a!=pa)){
-          screen=0;
-          MMMove.play();       
     }
 }

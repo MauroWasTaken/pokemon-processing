@@ -16,7 +16,7 @@ void keyReleased() {
 
 void keyverification(int k, boolean holding) {
   if(!availableController){
-    println(k);
+    //println(k);
     switch(k) {
     case 10:
       if(holding){

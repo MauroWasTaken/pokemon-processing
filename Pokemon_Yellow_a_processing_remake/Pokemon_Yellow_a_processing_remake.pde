@@ -11,7 +11,7 @@ int screen=0;
 void setup() {
   background(0,0,0);
   fullScreen(1);
-  frameRate(60);
+  frameRate(200);
   smooth(3);
   control = ControlIO.getInstance(this);
   controller= control.getMatchedDevice("pokemonController");
@@ -52,7 +52,7 @@ void gameLoading(){
 
 
 void draw() {
-  clear();
+  println(frameRate);
   if(availableController){
     getControllerInput();
   }
